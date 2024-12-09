@@ -1,9 +1,6 @@
 Exmo Sr.
 
-This is the current code.
-I started making the code in one project and then moved to two projects (an engine one and game one).
-I'm trying to put the original code in the structures you showed us last monday.
-That's about it. 
+Right now I tried including the glad with include directories => $(SolutionDir)Directories/glad/include but I presume I did something wrong
 
 Atenciosamente,
 Ferre Ceustermans
