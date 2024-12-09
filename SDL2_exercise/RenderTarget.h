@@ -1,5 +1,6 @@
 #pragma once
 #include<SDL.h>
+#include<iostream>
 class RenderTarget
 {
 public:
@@ -10,6 +11,10 @@ public:
 	~RenderTarget();
 
 	void InitRenderer();
+
+
+private:
+
 
 };
 

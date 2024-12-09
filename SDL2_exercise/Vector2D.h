@@ -3,7 +3,19 @@
 #include<iostream>
 class Vector2D
 {
+private:
+	int xPosition;
+	int yPosition;
+
+
 public:
+
+	Vector2D(int xPosition, int yPosition);
+
+	void SetxPosition();
+	void SetyPosition();
+
+
 	SDL_Rect playerRect;
 	SDL_Rect playerPosition;
 
@@ -11,7 +23,7 @@ public:
 	
 
 	//Vector2D() {};
-	Vector2D();	//void Position();
+		//void Position();
 
 	void Position(SDL_Rect Position, int coordinates = 0, int scale = 0);
 	void Rect(SDL_Rect Rect);

@@ -1,6 +1,21 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (SDL2_exercise.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Actor.cpp
   Animation.cpp
+  Pawn.cpp
+  RenderTarget.cpp
+C:\Users\ceust\source\repos\SDL2_exercise\RenderTarget.cpp(8,16): warning C4101: 'renderTarget': unreferenced local variable
+  Engine.cpp
+C:\Users\ceust\source\repos\SDL2_exercise\Window.h(14,18): warning C4099: 'SDL_Window': type name first seen using 'struct' now seen using 'class'
+C:\Users\ceust\source\repos\SDL2_exercise\Vendor\include\SDL2\SDL_video.h(95,16): message : see declaration of 'SDL_Window'
+C:\Users\ceust\source\repos\SDL2_exercise\Window.h(15,20): warning C4099: 'SDL_Renderer': type name first seen using 'struct' now seen using 'class'
+C:\Users\ceust\source\repos\SDL2_exercise\Vendor\include\SDL2\SDL_render.h(141,8): message : see declaration of 'SDL_Renderer'
+C:\Users\ceust\source\repos\SDL2_exercise\Engine.cpp(13,9): fatal  error C1083: Cannot open include file: 'glad/glad.h': No such file or directory
+  Texture.cpp
+  TileSet.cpp
   Vector2D.cpp
+  Window.cpp
+C:\Users\ceust\source\repos\SDL2_exercise\Window.h(14,18): warning C4099: 'SDL_Window': type name first seen using 'struct' now seen using 'class'
+C:\Users\ceust\source\repos\SDL2_exercise\Vendor\include\SDL2\SDL_video.h(95,16): message : see declaration of 'SDL_Window'
+C:\Users\ceust\source\repos\SDL2_exercise\Window.h(15,20): warning C4099: 'SDL_Renderer': type name first seen using 'struct' now seen using 'class'
+C:\Users\ceust\source\repos\SDL2_exercise\Vendor\include\SDL2\SDL_render.h(141,8): message : see declaration of 'SDL_Renderer'
   Generating Code...
-Engine.obj : warning LNK4006: "struct SDL_Texture * __cdecl LoadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Renderer *)" (?LoadTexture@@YAPEAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUSDL_Renderer@@@Z) already defined in Texture.obj; second definition ignored
-  SDL2_exercise.vcxproj -> C:\Users\ceust\source\repos\SDL2_exercise\x64\Debug\Engine.lib

@@ -7,7 +7,6 @@
 #include"Engine.h"
 #include"Window.h"
 #include"Texture.h"
-#include"Level.h"
 #include"Vector2D.h"
 #include"SpaceShip.h"
 #include "RenderTarget.h"
@@ -49,20 +48,27 @@
 //	return optimizedSurface;
 //}
 
-int main(int argc, char* argv[])
-{
-	RenderTarget renderer;
+//MyGameEngine* engine = nullptr;
 
-	renderer.renderTarget = 
-	
+int main(int argc, char* argv[])
+{	
+	//engine = new MyGameEngine();
+
 	MyGameEngine engine;
-	//Window window;
-	//Texture background;
-	Level background;
-	
-	background.setbackground("graphics/galaxy2.bmp");
 
 	engine.start();
+	
+	//background.setbackground("graphics/galaxy2.bmp");
+
+
+	while (engine.GetisRunning())
+	{
+		engine.events();
+		engine.update();
+		engine.render();
+	}
+
+	engine.destroy();
 
 	
 		//SDL_Event ev;
@@ -126,8 +132,7 @@ int main(int argc, char* argv[])
 
 		//SDL_Quit();
 
-		return 0;
-
+		
 		//create the window in here
 
 	
@@ -149,5 +154,6 @@ int main(int argc, char* argv[])
 
 	//create level
 	//Setbackgroundhere
+	return 0;
 
 }

@@ -8,11 +8,23 @@
 //	this->playerPosition = Position;
 //}
 
-Vector2D::Vector2D()
+Vector2D::Vector2D(int xPosition, int yPosition)
 {
+	this->xPosition = xPosition;
+	this->yPosition = yPosition;
 	//Vector2D::playerRect = Rect;
 	//Vector2D::playerPosition = Position;
 }
+void SetxPosition(int xPosition)
+{
+	
+}
+void SetyPosition(int startyPosition)
+{
+
+}
+
+
 
 void Vector2D::Position(SDL_Rect playerPosition, int coordinates, int scale)
 {

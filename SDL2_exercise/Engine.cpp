@@ -9,10 +9,8 @@
 #include"Engine.h"
 #include"Window.h"
 #include"Texture.h"
-#include"Level.h"
 #include"Vector2D.h"
-#include"SpaceShip.h"
-#include""
+#include<glad/glad.h>
 
 //struct Missile
 //{
@@ -429,7 +427,6 @@ MyGameEngine::MyGameEngine()
 void MyGameEngine::start()
 {
 
-	SDL_Event ev;
 	//Window window;
 	SDL_Texture* background = nullptr;
 	SDL_Window* window = nullptr;
@@ -443,13 +440,6 @@ void MyGameEngine::start()
 	int frameWidth, frameHeight;
 	int textureWidth, textureHeight;
 
-	Vector2D playerPos;
-
-	playerPos.Position(playerPosition, 0, 32);
-
-	//Vector2D playerPosition(playerRect, playerPosition);
-
-	//playerPosition.Position(playerPosition);
 
 	SDL_Init(SDL_INIT_VIDEO);
 
@@ -459,61 +449,79 @@ void MyGameEngine::start()
 		SDL_RENDERER_PRESENTVSYNC);
 
 
-	currentImage = LoadTexture("graphics/Ship1.bmp", renderTarget);
-	background = LoadTexture("graphics/galaxy2.bmp", renderTarget);
+	//currentImage = LoadTexture("graphics/Ship1.bmp", renderTarget);
+	//background = LoadTexture("graphics/galaxy2.bmp", renderTarget);
 
 
-	SDL_QueryTexture(currentImage, NULL, NULL, &textureWidth, &textureHeight);
+	//SDL_QueryTexture(currentImage, NULL, NULL, &textureWidth, &textureHeight);
 
-	frameWidth = textureWidth / 7;
-	frameHeight = textureHeight / 1;
+	//frameWidth = textureWidth / 7;
+	//frameHeight = textureHeight / 1;
 
-	playerRect.x = playerRect.y = 0;
-	//playerPos.Rect(playerRect);
+	//playerRect.x = playerRect.y = 0;
+	////playerPos.Rect(playerRect);
 
 
-	playerRect.w = frameWidth;
-	playerRect.h = frameHeight;
+	//playerRect.w = frameWidth;
+	//playerRect.h = frameHeight;
 
 	//Texture LoadTexture("graphics/galaxy2.bmp", );
 
-	bool isRunning = true;
+	isRunning = true;
 
-	while (isRunning)
-	{
-		while (SDL_PollEvent(&ev) != 0)
-		{
+	//while (isRunning)
+	//{
+	//	
+	//	
+	//	SDL_RenderCopy(renderTarget, background, NULL, NULL);
+	//	SDL_RenderCopy(renderTarget, currentImage, &playerRect, &playerPosition);
 
-			SDL_UpdateWindowSurface(window); //game Loop
-			// Getting the events
-			if (ev.type == SDL_QUIT)
-				isRunning = false;
-		}
-		SDL_UpdateWindowSurface(window);
-		SDL_RenderClear(renderTarget);
-		SDL_RenderCopy(renderTarget, background, NULL, NULL);
-		SDL_RenderCopy(renderTarget, currentImage, &playerRect, &playerPosition);
-
-		SDL_RenderPresent(renderTarget);
-	}
+	//
+	//}
 
 	
 
-	SDL_DestroyWindow(window);
+	/*
 	SDL_DestroyTexture(currentImage);
 
-	SDL_DestroyRenderer(renderTarget);
-	SDL_DestroyTexture(background);
-	window = nullptr;
-	currentImage = nullptr;
-	renderTarget = nullptr;
+	
+	SDL_DestroyTexture(background);*/
 
-	SDL_Quit();
+
 	
 	//create the window in here
 	
 }
+void MyGameEngine::events()
+{
+	SDL_Event ev;
+	while (SDL_PollEvent(&ev) != 0)
+	{
+		// Getting the events
+		if (ev.type == SDL_QUIT)
+			isRunning = false;
+	}
+}
+void MyGameEngine::update()
+{
+	SDL_UpdateWindowSurface(window);
 
+}
+void MyGameEngine::render()
+{
+	SDL_SetRenderDrawColor(renderTarget, 0xFF, 0, 0, 0xFF);
+	SDL_RenderClear(renderTarget);
+	SDL_RenderPresent(renderTarget);
+}
+void MyGameEngine::destroy()
+{
+	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(renderTarget);
+	window = nullptr;
+	renderTarget = nullptr;
+	SDL_Quit();
+
+}
 //ADD THE GAMELOOP AND THE WINDOW
 
 //void Structs::addStruct(SDL_Rect)

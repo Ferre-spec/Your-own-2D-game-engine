@@ -75,22 +75,22 @@ void SpaceShip :: InputMovementKeyboard(float moveSpeed, float deltaTime)
 }
 
 
-void SpaceShip ::move_left(float delta_Time)
-{
-	position.x -= speed * delta_Time;
-}
-void SpaceShip::move_right(float delta_Time)
-{
-	position.x -= speed * delta_Time;
-}
-void SpaceShip::move_forward(float delta_Time)
-{
-	position.x -= speed * delta_Time;
-}
-void SpaceShip::move_backward(float delta_Time)
-{
-	position.x -= speed * delta_Time;
-}
+//void SpaceShip ::move_left(float delta_Time)
+//{
+//	position.x -= speed * delta_Time;
+//}
+//void SpaceShip::move_right(float delta_Time)
+//{
+//	position.x -= speed * delta_Time;
+//}
+//void SpaceShip::move_forward(float delta_Time)
+//{
+//	position.x -= speed * delta_Time;
+//}
+//void SpaceShip::move_backward(float delta_Time)
+//{
+//	position.x -= speed * delta_Time;
+//}
 
 #endif
 //implement movement, firing, animation?
