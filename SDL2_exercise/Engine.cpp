@@ -383,24 +383,7 @@
 //}
 //
 //
-SDL_Texture* LoadTexture(std::string filePath, SDL_Renderer* renderTarget)
-{
-	SDL_Texture* texture = nullptr;
-	SDL_Surface* surface = SDL_LoadBMP(filePath.c_str());
-	if (surface == NULL)
-		std::cout << "Errorsurface" << std::endl;
-	else
-	{
-		SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGB(surface->format, 255, 0, 255));
-		texture = SDL_CreateTextureFromSurface(renderTarget, surface);
-		if (texture == NULL)
-			std::cout << "Errortexture" << std::endl;
-	}
 
-	SDL_FreeSurface(surface);
-
-	return texture;
-}
 SDL_Surface* OptimizedSurface(std::string filePath, SDL_Surface* windowSurface)
 {
 	SDL_Surface* optimizedSurface = nullptr;
@@ -429,7 +412,7 @@ void MyGameEngine::start()
 
 	//Window window;
 	SDL_Texture* background = nullptr;
-	SDL_Window* window = nullptr;
+	//SDL_Window* window = nullptr;
 	SDL_Renderer* renderTarget = nullptr;
 
 	SDL_Texture* currentImage = nullptr;
@@ -443,10 +426,23 @@ void MyGameEngine::start()
 
 	SDL_Init(SDL_INIT_VIDEO);
 
-	window = SDL_CreateWindow("SDL window", SDL_WINDOWPOS_CENTERED,
-		SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+
+	/*window = SDL_CreateWindow("SDL window", SDL_WINDOWPOS_CENTERED,
+		SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);*/
+
+	SDL_Window* window = SDL_CreateWindow("SuperAwesomeWindow", 100, 100, 800, 600, SDL_WINDOW_OPENGL);
+
+
+
+	SDL_GLContext context = SDL_GL_CreateContext(window);
 	renderTarget = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED |
 		SDL_RENDERER_PRESENTVSYNC);
+
+
 
 
 	//currentImage = LoadTexture("graphics/Ship1.bmp", renderTarget);

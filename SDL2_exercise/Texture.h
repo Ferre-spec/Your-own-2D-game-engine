@@ -2,6 +2,8 @@
 #include"SDL.h"
 #include"RenderTarget.h"
 #include "stb_image.h"
+#include<glad/glad.h>
+
 
 class Texture
 {
@@ -12,10 +14,11 @@ public:
 	void textureUpdate();
 	void deleteTexture();
 
-	float GetVertices() { return vertices; }
+
 
 private:
 
-	float vertices;
-
+	GLuint shaderProgram;
+	GLuint vao;
+	GLuint texture;
 };

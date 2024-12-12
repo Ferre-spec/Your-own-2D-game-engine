@@ -2,7 +2,6 @@
 #include"Texture.h"
 #include<vector>
 #include <iostream>
-#include<glad/glad.h>
 
 Texture::~Texture()
 {
@@ -32,7 +31,7 @@ Texture::Texture()
 	GLuint ebo;
 	glGenBuffers(1, &ebo);
 
-	GLuint vao;
+ vao;
 	glGenVertexArrays(1, &vao);
 
 	// 1. bind Vertex Array Object
@@ -111,7 +110,7 @@ Texture::Texture()
 		std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
 	}
 
-	GLuint shaderProgram;
+	shaderProgram;
 	shaderProgram = glCreateProgram();
 
 	glAttachShader(shaderProgram, vertexShader);
@@ -142,7 +141,7 @@ Texture::Texture()
 
 
 
-	GLuint texture;
+	texture;
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D, texture);
 

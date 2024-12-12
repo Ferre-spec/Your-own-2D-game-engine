@@ -10,6 +10,7 @@
 #include"Vector2D.h"
 #include"SpaceShip.h"
 #include "RenderTarget.h"
+#include <glad/glad.h>
 
 //SDL_Texture* LoadTexture(std::string filePath, SDL_Renderer* renderTarget)
 //{
@@ -53,18 +54,23 @@
 int main(int argc, char* argv[])
 {	
 	//engine = new MyGameEngine();
+	Texture background;
 
 	MyGameEngine engine;
 
 	engine.start();
+
 	
-	//background.setbackground("graphics/galaxy2.bmp");
+	//something needs to be added to the application folder, seems thats giving the error
+	
 
 
 	while (engine.GetisRunning())
 	{
+
 		engine.events();
 		engine.update();
+		background.textureUpdate();
 		engine.render();
 	}
 
